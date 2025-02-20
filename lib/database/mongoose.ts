@@ -1,3 +1,4 @@
+/*eslint-disable @typescript-eslint/no-explicit-any */
 import mongoose ,{Mongoose} from 'mongoose';
 
 //get mongodb url from env file
