@@ -24,7 +24,7 @@ export const connectionTODb = async () => {
   cached.promise = 
     cached.promise || 
     mongoose.connect(MONGODB_URL, { 
-      dbName: 'imagishift', bufferCommands: false 
+      dbName: 'ImagiShift', bufferCommands: false 
     })
 
   cached.conn = await cached.promise;
