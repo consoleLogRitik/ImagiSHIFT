@@ -29,5 +29,8 @@ export const connectionTODb = async () => {
 
   cached.conn = await cached.promise;
 
+  console.log(cached.conn);
+  
+
   return cached.conn;
 }
