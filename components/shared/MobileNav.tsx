@@ -14,6 +14,9 @@ import {
 import { navLinks } from "@/constants";
 
 const MobileNav = () => {
+
+  const path  = usePathname();
+
   return (
     <header className="header">
       <Link href="/">
@@ -51,7 +54,7 @@ const MobileNav = () => {
                 <SignedIn>
                   <ul className="header-nav_elements">
                     {navLinks.map((link) => {
-                      const isActive = link.route === usePathname();
+                      const isActive = link.route === path ;
                       return (
                         <li
                           key={link.route}

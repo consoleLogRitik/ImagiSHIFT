@@ -1,12 +1,13 @@
 "use client";
 import { navLinks } from "@/constants";
-import { SignedIn, SignedOut, SignIn, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/button";
 
 const SideBar = () => {
+  const path = usePathname();
   return (
     <aside className="sidebar">
       <div className="flex size-fit flex-col gap-4">
@@ -22,7 +23,7 @@ const SideBar = () => {
           <SignedIn>
             <ul className="sidebar-nav_elements">
               {navLinks.slice(0, 6).map((link) => {
-                const isActive = link.route === usePathname();
+                const isActive = link.route === path;
                 return (
                   <li
                     key={link.route}
@@ -48,7 +49,7 @@ const SideBar = () => {
 
             <ul className="sidebar-nav_elements">
               {navLinks.slice(6).map((link) => {
-                const isActive = link.route === usePathname();
+                const isActive = link.route === path;
                 return (
                     <li
                       key={link.route}
